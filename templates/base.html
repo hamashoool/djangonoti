@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html>{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock title %}</title>
+    <script src="{% static 'major/js/jquery-3.6.0.min.js' %}"></script>
 </head>
 <body>
     {% block content %}

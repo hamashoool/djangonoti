@@ -6,4 +6,26 @@
 
 {% block content %}
     <h1>Welcome {{ request.user.username }}</h1>
+
+    <div id="noti">
+        {% include 'major/noties.html' %}
+    </div>
+    <script>
+    $(document).ready(function(){
+        function refresh() {
+            $.ajax({
+                url: "{% url 'noties' %}",
+                success: function(data) {
+                    $('#noti').html(data);
+                    setTimeout(refresh, 10000);
+                }
+            });
+            {#setTimeout(refresh, 10000);#}
+        }
+
+        $(function(){
+            refresh();
+        });
+    });
+    </script>
 {% endblock content %}

@@ -1,0 +1,6 @@
+
+        <ul>
+        {% for noti in notifications %}
+            <li>{{ noti.message }} - for {{ noti.user }} - <a href="{% url 'noti' noti.id %}">check it out.</a></li>
+        {% endfor %}
+        </ul>

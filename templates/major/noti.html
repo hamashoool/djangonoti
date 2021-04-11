@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Noti
+{% endblock title %}
+
+{% block content %}
+    <h2>User: {{ noti.user }}</h2>
+    <h2>Message: {{ noti.message }}</h2>
+    <h2>Verb: {{ noti.verb }}</h2>
+{% endblock content %}
